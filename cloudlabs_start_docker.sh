@@ -76,12 +76,14 @@ else
 fi
 
 
-# get into /mnt/extra
+echo -e "Adjusting permissions on /mnt/extra..." | sudo tee -a /tmp/install.log
 sudo chown -R $USER /mnt/extra
 sudo chmod -R 777 /mnt/extra
+
+# get into /mnt/extra
 cd /mnt/extra
 
-echo -e "Clonding quic_doh_docker github repo for docker-compose.yml file..." | sudo tee -a /tmp/install.log
+echo -e "Cloning quic_doh_docker github repo for docker-compose.yml file..." | sudo tee -a /tmp/install.log
 
 #get doh_docker source for docker-compose.yaml
 sudo git clone https://github.com/cslev/quic_doh_docker
