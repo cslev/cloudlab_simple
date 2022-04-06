@@ -33,7 +33,7 @@ PYTHON_DEPS="python3 libpython3-dev"
 
 sudo echo -e "\n\n${reverse}${red}Installing is still in progess...!${disable}${none}" | sudo tee /etc/motd
 
-echo -e "Installing requirements..."
+echo -e "Installing requirements..." | sudo tee -a /tmp/install.log
 
 
 sudo dpkg-reconfigure debconf --frontend=noninteractive
@@ -42,6 +42,8 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends $
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends $PYTHON_DEPS
 
 #installing docker
+echo -e "Installing docker..." | sudo tee -a /tmp/install.log
+
 arch=$(dpkg -l |grep linux-image-generic|awk '{print $4}')
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository \
@@ -54,6 +56,9 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends d
 #create dir /mnt to obtain more disk space
 sudo mkdir -p /mnt/extra
 
+echo -e "Installing docker-compose..." | sudo tee -a /tmp/install.log
+
+
 if [ "$arch" == "arm64" ] 
 then
   sudo DEBIAN_FRONTEND=noninteractive apt-get install -y docker-compose
@@ -64,6 +69,8 @@ else
   sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
 
+  echo -e "Requesting extra 1TB storage..." | sudo tee -a /tmp/install.log
+
   #request more space (random around 1TB)
   sudo /usr/local/etc/emulab/mkextrafs.pl /mnt/extra
 fi
@@ -72,6 +79,8 @@ fi
 # get into /mnt/extra
 cd /mnt/extra
 
+echo -e "Clonding quic_doh_docker github repo for docker-compose.yml file..." | sudo tee -a /tmp/install.log
+
 #get doh_docker source for docker-compose.yaml
 sudo git clone https://github.com/cslev/quic_doh_docker
 
@@ -79,12 +88,16 @@ sudo git clone https://github.com/cslev/quic_doh_docker
 #sudo docker build -t cslev/doh_docker:arm64v8 -f Dockerfile.arm64 .
 
 
+echo -e "Downloading prebuilt image from docker hub..." | sudo tee -a /tmp/install.log
+
 #get doh_docker image
 sudo docker pull cslev/quic_doh_docker:latest
 
+echo -e "Final minor adjustments..." | sudo tee -a /tmp/install.log
+
 sudo cp /local/repository/source/others/bashrc_template /root/.bashrc
 # sudo source /root/.bashrc
-sudo cp /local/repository/source/others/bashrc_template /users/$USER/.bashrc
+cp /local/repository/source/others/bashrc_template /users/$USER/.bashrc
 sudo echo "${USER}   ALL= NOPASSWD:/usr/sbin/tcpdump" | sudo tee -a /etc/sudoers
 sudo apt-get install -f -y
 sudo apt-get autoremove -y
@@ -94,5 +107,6 @@ sudo apt-get autoremove -y
 # sudo echo -e "\n\n${reverse}${red}mv /local/repository/others/bashrc_template /root/.bashrc!${disable}${none}" | sudo tee  /etc/motd
 # sudo echo -e "\n\n${reverse}${red}. /root/.bashrc!${disable}${none}" | sudo tee -a /etc/motd
 sudo echo -e "\n\n${reverse}${green}Installation finished\n\$PATH=${PATH}!${disable}${none}" | sudo tee /etc/motd
+sudo echo -e "\n\n${reverse}${green}Installation finished\n\$PATH=${PATH}!${disable}${none}" | sudo tee -a /tmp/install.log
 
 
