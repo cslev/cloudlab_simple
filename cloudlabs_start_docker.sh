@@ -77,6 +77,8 @@ fi
 
 
 # get into /mnt/extra
+sudo chown -R $USER /mnt/extra
+sudo chmod -R 777 /mnt/extra
 cd /mnt/extra
 
 echo -e "Clonding quic_doh_docker github repo for docker-compose.yml file..." | sudo tee -a /tmp/install.log
