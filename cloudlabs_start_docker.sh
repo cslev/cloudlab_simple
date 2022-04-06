@@ -32,6 +32,7 @@ DEPS="libc6 tshark tcpdump nano tar bzip2 wget lsb-release screen procps apt-tra
 PYTHON_DEPS="python3 libpython3-dev"
 
 sudo echo -e "\n\n${reverse}${red}Installing is still in progess...!${disable}${none}" | sudo tee /etc/motd
+sudo echo -e "tail -f /tmp/install.log" | sudo tee -a /etc/motd
 
 echo -e "Installing requirements..." | sudo tee -a /tmp/install.log
 
