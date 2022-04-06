@@ -83,9 +83,9 @@ sudo git clone https://github.com/cslev/quic_doh_docker
 sudo docker pull cslev/quic_doh_docker:latest
 
 sudo cp /local/repository/source/others/bashrc_template /root/.bashrc
-sudo source /root/.bashrc
+# sudo source /root/.bashrc
 sudo cp /local/repository/source/others/bashrc_template /users/$USER/.bashrc
-sudo echo "${USER}   ALL= NOPASSWD:/usr/sbin/tcpdump" >> /etc/sudoers
+sudo echo "${USER}   ALL= NOPASSWD:/usr/sbin/tcpdump" | sudo tee -a /etc/sudoers
 sudo apt-get install -f -y
 sudo apt-get autoremove -y
 
