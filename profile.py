@@ -1,6 +1,6 @@
 kube_description= \
 """
-Levi: Four pure Ubuntu 18.04 VMs running DoH traffic captures.
+Levi: Some Ubuntu 18.04 VMs running DoH traffic captures.
 """
 kube_instruction= \
 """
