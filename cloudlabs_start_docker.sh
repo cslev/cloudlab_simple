@@ -107,9 +107,9 @@ sudo apt-get autoremove -y
 
 
 sudo echo -e "\n\n${reverse}${green}Installation finished\n\$PATH=${PATH}!${disable}${none}" | sudo tee /etc/motd
-sudo echo -e "\n\n${reverse}${green}Don't forget to disable NIC offloading features: ethtool -K eno49 rx off tx off gso off tso off gro off! (iface might be different!)${disable}${none}" | sudo tee -a /etc/motd
+sudo echo -e "\n\n${reverse}${green}Don't forget to disable NIC offloading features: \nethtool -K eno49 rx off tx off gso off tso off gro off \n(iface might be different!)${disable}${none}" | sudo tee -a /etc/motd
 
 sudo echo -e "\n\n${reverse}${green}Installation finished\n\$PATH=${PATH}!${disable}${none}" | sudo tee -a /tmp/install.log
-sudo echo -e "\n\n${reverse}${green}Don't forget to disable NIC offloading features: ethtool -K eno49 rx off tx off gso off tso off gro off! (iface might be different!)${disable}${none}" | sudo tee -a /tmp/install.log
+sudo echo -e "\n\n${reverse}${green}Don't forget to disable NIC offloading features: \nethtool -K eno49 rx off tx off gso off tso off gro off \n(iface might be different!)${disable}${none}" | sudo tee -a /tmp/install.log
 
 
