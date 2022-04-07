@@ -24,8 +24,8 @@ lightblue='\033[94m'
 pink='\033[95m'
 lightcyan='\033[96m'
 
-
-
+#change this if needed
+USERNAME="cslev"
 
 DEPS="libc6 tshark tcpdump nano tar bzip2 wget lsb-release screen procps apt-transport-https ca-certificates curl gnupg-agent software-properties-common mc git ethtool"
 
@@ -78,7 +78,7 @@ fi
 
 
 echo -e "Adjusting permissions on /mnt/extra..." | sudo tee -a /tmp/install.log
-sudo chown -R $USER /mnt/extra
+sudo chown -R $USERNAME /mnt/extra
 sudo chmod -R 777 /mnt/extra
 
 # get into /mnt/extra
@@ -102,17 +102,16 @@ echo -e "Final minor adjustments..." | sudo tee -a /tmp/install.log
 
 sudo cp /local/repository/source/others/bashrc_template /root/.bashrc
 # sudo source /root/.bashrc
-cp /local/repository/source/others/bashrc_template /users/$USER/.bashrc
-sudo echo "${USER}   ALL= NOPASSWD:/usr/sbin/tcpdump" | sudo tee -a /etc/sudoers
+cp /local/repository/source/others/bashrc_template /users/$USERNAME/.bashrc
+sudo echo "${USERNAME}   ALL= NOPASSWD:/usr/sbin/tcpdump" | sudo tee -a /etc/sudoers
 sudo apt-get install -f -y
 sudo apt-get autoremove -y
 
-# sudo echo -e "\n\n${reverse}${red}Install tshark manually!${disable}${none}" | sudo tee  /etc/motd
-# sudo echo -e "\n\n${reverse}${red}apt-get install tshark -y --no-install-recommends!${disable}${none}" | sudo tee  /etc/motd
-# sudo echo -e "\n\n${reverse}${red}mv /local/repository/others/bashrc_template /root/.bashrc!${disable}${none}" | sudo tee  /etc/motd
-# sudo echo -e "\n\n${reverse}${red}. /root/.bashrc!${disable}${none}" | sudo tee -a /etc/motd
+
 sudo echo -e "\n\n${reverse}${green}Installation finished\n\$PATH=${PATH}!${disable}${none}" | sudo tee /etc/motd
 sudo echo -e "\n\n${reverse}${green}Don't forget to disable NIC offloading features: ethtool -K eno49 rx off tx off gso off tso off gro off! (iface might be different!)${disable}${none}" | sudo tee -a /etc/motd
+
 sudo echo -e "\n\n${reverse}${green}Installation finished\n\$PATH=${PATH}!${disable}${none}" | sudo tee -a /tmp/install.log
+sudo echo -e "\n\n${reverse}${green}Don't forget to disable NIC offloading features: ethtool -K eno49 rx off tx off gso off tso off gro off! (iface might be different!)${disable}${none}" | sudo tee -a /tmp/install.log
 
 
