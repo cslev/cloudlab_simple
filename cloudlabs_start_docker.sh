@@ -25,7 +25,7 @@ pink='\033[95m'
 lightcyan='\033[96m'
 
 #change this if needed
-USERNAME="cslev"
+USERNAME="csikorl"
 
 DEPS="libc6 tshark tcpdump nano tar bzip2 wget lsb-release screen procps apt-transport-https ca-certificates curl gnupg-agent software-properties-common mc git ethtool"
 
