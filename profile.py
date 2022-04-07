@@ -1,6 +1,6 @@
 kube_description= \
 """
-cslev: Some pure Ubuntu 18.04 VMs bootstrapped with docker and docker-compose capabilities
+cslev: Some pure Ubuntu 20.04 VMs bootstrapped with docker and docker-compose capabilities
 """
 kube_instruction= \
 """
