@@ -31,7 +31,8 @@ for i in range(1,4):
   #node.hardware_type = "xl170" ##AMD64
   node.hardware_type = "d6515" ##Amd epyc
   #node.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops:DEB8-64-STD' #<-- does not work
-  node.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD'
+  #node.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD'
+  node.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU20-64-STD'
   node.Site(str(key))
 
   #START the docker-based version
