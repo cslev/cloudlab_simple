@@ -25,7 +25,7 @@ tour.Instructions(IG.Tour.MARKDOWN,kube_instruction)
 request.addTour(tour)
 
 for i in range(1,4):
-  key = str("doh_docker_{}".format(i))
+  key = str("beast_{}".format(i))
   node = request.RawPC(str(key))
 #   node.hardware_type = "m400" ##ARM
   #node.hardware_type = "xl170" ##AMD64
