@@ -139,3 +139,66 @@ portal.context.printRequestRSpec()
 #   MEM:  128GB ECC Memory
 #   DISK: Two 960 GB 6G SATA SSD
 #   GPU:  Four NVIDIA 16GB Tesla V100 SMX2 GPUs
+
+# ------
+# Clemson cluster (as of 04/2022)
+# ------
+#   - c8220: 96 nodes (Ivy Bridge, 20 core)
+#   CPU:  Two Intel E5-2660 v2 10-core CPUs at 2.20 GHz (Ivy Bridge)
+#   MEM:  256GB ECC Memory (16x 16 GB DDR4 1600MT/s dual rank RDIMMs
+#   DISK: Two 1 TB 7.2K RPM 3G SATA HDDs
+#   NIC:  Dual-port Intel 10Gbe NIC (PCIe v3.0, 8 lanes
+#   NIC:  Qlogic QLE 7340 40 Gb/s Infiniband HCA (PCIe v3.0, 8 lanes)
+  
+#   - c8220x: 4 nodes (Ivy Bridge, 20 core, 20 disks)
+#   CPU:  Two Intel E5-2660 v2 10-core CPUs at 2.20 GHz (Ivy Bridge)
+#   MEM:  256GB ECC Memory (16x 16 GB DDR4 1600MT/s dual rank RDIMMs
+#   DISK: Eight 1 TB 7.2K RPM 3G SATA HDDs
+#   DISK: Twelve 4 TB 7.2K RPM 3G SATA HDDs
+#   NIC:  Dual-port Intel 10Gbe NIC (PCIe v3.0, 8 lanes
+#   NIC:  Qlogic QLE 7340 40 Gb/s Infiniband HCA (PCIe v3.0, 8 lanes)
+  
+#   - c6320: 84 nodes (Haswell, 28 core)
+#   CPU:  Two Intel E5-2683 v3 14-core CPUs at 2.00 GHz (Haswell)
+#   MEM:  256GB ECC Memory
+#   DISK: Two 1 TB 7.2K RPM 3G SATA HDDs
+#   NIC:  Dual-port Intel 10Gbe NIC (X520)
+#   NIC:  Qlogic QLE 7340 40 Gb/s Infiniband HCA (PCIe v3.0, 8 lanes)
+  
+#   - c4130: 2 nodes (Haswell, 28 core, two GPUs)
+#   CPU:  Two Intel E5-2680 v3 12-core processors at 2.50 GHz (Haswell)
+#   MEM:  256GB ECC Memory
+#   DISK: Two 1 TB 7.2K RPM 3G SATA HDDs
+#   GPU:  Two Tesla K40m GPUs
+#   NIC:  Dual-port Intel 1Gbe NIC (i350)
+#   NIC:  Dual-port Intel 10Gbe NIC (X710)
+#   NIC:  Qlogic QLE 7340 40 Gb/s Infiniband HCA (PCIe v3.0, 8 lanes)
+
+#   - dss7500: 2 nodes (Haswell, 12 core, 270TB disk)
+#   CPU:  Two Intel E5-2620 v3 6-core CPUs at 2.40 GHz (Haswell)
+#   MEM:  128GB ECC Memory
+#   DISK: Two 120 GB 6Gbps SATA SSDs
+#   DISK: 45 6 TB 7.2K RPM 6Gbps SATA HDDs
+#   NIC:  Dual-port Intel 10Gbe NIC (X520)
+
+#   - c6420: 72 nodes (Intel Skylake, 32 core, 2 disk)
+#   CPU:  Two Sixteen-core Intel Xeon Gold 6142 CPUs at 2.6 GHz
+#   MEM:  384GB ECC DDR4-2666 Memory
+#   DISK: Two Seagate 1TB 7200 RPM 6G SATA HDs
+#   NIC:  Dual-port Intel X710 10Gbe NIC
+
+#   - ibm8335: 6 nodes (POWER8NVL, 20 core, 256GB RAM, 1 GPU)
+#   CPU:  Two ten-core (8 threads/core) IBM POWER8NVL CPUs at 2.86 GHz
+#   MEM:  256GB 1600MHz DDR4 memory
+#   DISK: Two Seagate 1TB 7200 RPM 6G SATA HDDs (ST1000NX0313)
+#   GPU: Two NVIDIA GP100GL (Tesla P100 SMX2 16GB)
+#   NIC:  One Broadcom NetXtreme II BCM57800 1/10 GbE NIC
+#   FPGA:  One ADM-PCIE-KU3 (Xilinx Kintex UltraScale)
+
+#   - r7525: 15 nodes (AMD EPYC Rome, 64 core, 512GB RAM, 2 x GPU)
+#   CPU:  Two 32-core AMD 7542 at 2.9GHz
+#   MEM:  512GB ECC Memory (16x 32 GB 3200MHz DDR4)
+#   DISK: One 2TB 7200 RPM 6G SATA HDD
+#   GPU:  Two NVIDIA GV100GL (Tesla V100S PCIe 32GB)
+#   NIC:  Dual-port Mellanox ConnectX-5 25 Gb NIC (PCIe v4.0)
+#   NIC:  Dual-port Mellanox BlueField2 100 Gb SmartNIC
