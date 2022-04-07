@@ -243,7 +243,7 @@ request.addTour(tour)
 
 
 # node quic on UTAH cluster
-for i in range(1,6):
+for i in range(1,7):
   key = str("quic_docker_{}".format(i))
   kube_quic = request.RawPC(str(key))
   # kube_quic.hardware_type = "m400" ##ARM - Eight 64-bit ARMv8 (Atlas/A57) cores at 2.4 GHz (APM X-GENE)
