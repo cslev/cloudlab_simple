@@ -76,11 +76,6 @@ else
   sudo /usr/local/etc/emulab/mkextrafs.pl /mnt/extra
 fi
 
-
-echo -e "Adjusting permissions on /mnt/extra..." | sudo tee -a /tmp/install.log
-sudo chown -R $USERNAME /mnt/extra
-sudo chmod -R 777 /mnt/extra
-
 # get into /mnt/extra
 cd /mnt/extra
 
@@ -92,6 +87,9 @@ sudo git clone https://github.com/cslev/quic_doh_docker
 #build container
 #sudo docker build -t cslev/doh_docker:arm64v8 -f Dockerfile.arm64 .
 
+echo -e "Adjusting permissions on /mnt/extra..." | sudo tee -a /tmp/install.log
+sudo chown -R $USERNAME /mnt/extra
+sudo chmod -R 777 /mnt/extra
 
 echo -e "Downloading prebuilt image from docker hub..." | sudo tee -a /tmp/install.log
 
