@@ -80,3 +80,62 @@ portal.context.printRequestRSpec()
 #   DISK: Two 1.6 TB NVMe SSD (PCIe v4.0)
 #   NIC:  Dual-port Mellanox ConnectX-5 25 GB NIC (PCIe v4.0)
 #   NIC:  Dual-port Mellanox ConnectX-5 Ex 100 GB NIC (PCIe v4.0)
+
+# ------
+# Wisconsin cluster (as of 04/2022)
+# ------
+#   - c220g1: 90 nodes (Haswell, 16 core, 3 disks)
+#   CPU:  Two Intel E5-2630 v3 8-core CPUs at 2.40 GHz (Haswell w/ EM64T)
+#   RAM:  128GB ECC Memory (8x 16 GB DDR4 1866 MHz dual rank RDIMMs)
+#   Disk: Two 1.2 TB 10K RPM 6G SAS SFF HDDs
+#   Disk: One Intel DC S3500 480 GB 6G SATA SSDs
+#   NIC:  Dual-port Intel X520-DA2 10Gb NIC (PCIe v3.0, 8 lanes)
+#   NIC:  Onboard Intel i350 1Gb
+
+#   - c240g1: 10 nodes (Haswell, 16 core, 14 disks)
+#   CPU:  Two Intel E5-2630 v3 8-core CPUs at 2.40 GHz (Haswell w/ EM64T)
+#   MEM:  128GB ECC Memory (8x 16 GB DDR4 1866 MHz dual rank RDIMMs)
+#   DISK: Two Intel DC S3500 480 GB 6G SATA SSDs
+#   DISK: Twelve 3 TB 3.5" HDDs donated by Seagate
+#   NIC:  Dual-port Intel X520-DA2 10Gb NIC (PCIe v3.0, 8 lanes)
+#   NIC:  Onboard Intel i350 1Gb
+
+#   - c220g2: 163 nodes (Haswell, 20 core, 3 disks)
+#   CPU:  Two Intel E5-2660 v3 10-core CPUs at 2.60 GHz (Haswell EP)
+#   MEM:  160GB ECC Memory (10x 16 GB DDR4 2133 MHz dual rank RDIMMs)
+#   DISK: One Intel DC S3500 480 GB 6G SATA SSDs
+#   DISK: Two 1.2 TB 10K RPM 6G SAS SFF HDDs
+#   NIC:  Dual-port Intel X520 10Gb NIC (PCIe v3.0, 8 lanes
+#   NIC:  Onboard Intel i350 1Gb
+
+#   - c240g2: 4 nodes (Haswell, 20 core, 8 disks)
+#   CPU:  Two Intel E5-2660 v3 10-core CPUs at 2.60 GHz (Haswell EP)
+#   MEM:  160GB ECC Memory (10x 16 GB DDR4 2133 MHz dual rank RDIMMs)
+#   DISK: Two Intel DC S3500 480 GB 6G SATA SSDs
+#   DISK: Two 1TB HDDs
+#   DISK:  Four 3TB HDDs
+#   NIC:  Dual-port Intel X520 10Gb NIC (PCIe v3.0, 8 lanes
+#   NIC:  Onboard Intel i350 1Gb
+
+#   - c220g5: 224 nodes (Intel Skylake, 20 core, 2 disks)
+#   CPU:  Two Intel Xeon Silver 4114 10-core CPUs at 2.20 GHz
+#   MEM:  192GB ECC DDR4-2666 Memory
+#   DISK: One 1 TB 7200 RPM 6G SAS HDs
+#   DISK: One Intel DC S3500 480 GB 6G SATA SSD
+#   NIC:  Dual-port Intel X520-DA2 10Gb NIC (PCIe v3.0, 8 lanes)
+#   NIC:  Onboard Intel i350 1Gb
+
+#   - c240g5: 32 nodes (Intel Skylake, 20 core, 2 disks, GPU)
+#   CPU:  Two Intel Xeon Silver 4114 10-core CPUs at 2.20 GHz
+#   MEM:  192GB ECC DDR4-2666 Memory
+#   DISK: One 1 TB 7200 RPM 6G SAS HDs
+#   DISK: One Intel DC S3500 480 GB 6G SATA SSD
+#   GPU:  One NVIDIA 12GB PCI P100 GPU
+#   NIC:  Dual-port Intel X520-DA2 10Gb NIC (PCIe v3.0, 8 lanes)
+#   NIC:  Onboard Intel i350 1Gb
+
+#   - c4130: 4 nodes (Intel Broadwell, 16 core, 2 disks, 4 GPUs)
+#   CPU:  Two Intel Xeon E5-2667 8-core CPUs at 3.20 GHz
+#   MEM:  128GB ECC Memory
+#   DISK: Two 960 GB 6G SATA SSD
+#   GPU:  Four NVIDIA 16GB Tesla V100 SMX2 GPUs
