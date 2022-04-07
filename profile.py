@@ -202,3 +202,53 @@ portal.context.printRequestRSpec()
 #   GPU:  Two NVIDIA GV100GL (Tesla V100S PCIe 32GB)
 #   NIC:  Dual-port Mellanox ConnectX-5 25 Gb NIC (PCIe v4.0)
 #   NIC:  Dual-port Mellanox BlueField2 100 Gb SmartNIC
+
+# ------
+# Apt cluster (as of 04/2022)
+# ------
+#   - r320: 128 nodes (Sandy Bridge, 8 cores)
+#   CPU:  1x Xeon E5-2450 processor (8 cores, 2.1Ghz)
+#   MEM:  16GB Memory (4 x 2GB RDIMMs, 1.6Ghz)
+#   DISK: 4 x 500GB 7.2K SATA Drives (RAID5)
+#   NIC:  1GbE Dual port embedded NIC (Broadcom)
+#   NIC:  1 x Mellanox MX354A Dual port FDR CX3 adapter w/1 x QSA adapter
+
+#   - c6220: 64 nodes (Ivy Bridge, 16 cores)
+#   CPU:  2 x Xeon E5-2650v2 processors (8 cores each, 2.6Ghz)
+#   MEM:  64GB Memory (8 x 8GB DDR-3 RDIMMs, 1.86Ghz)
+#   DISK: 2 x 1TB SATA 3.5 7.2K rpm hard drives
+#   NIC:  4 x 1GbE embedded Ethernet Ports (Broadcom)
+#   NIC:  1 x Intel X520 PCIe Dual port 10Gb Ethernet NIC
+#   NIC:  1 x Mellanox FDR CX3 Single port mezz card
+
+# ------
+# Mass cluster (as of 04/2022)
+# ------
+#   - rs440: 5 nodes (Skylake, 32 cores)
+#   CPU:  2 x Xeon Gold 6130 processors (16 cores each, 2.1Ghz)
+#   MEM:  192GB Memory (12 x 16GB RDIMMs)
+#   DISK: 1 x 240GB SATA SSD drives
+#   NIC:  2 x 10GbE embedded Ethernet Ports (Broadcom 57412)
+
+#   - rs620: 11 nodes (Sandy Bridge, 16 or 20 cores)
+#   CPU:  2 x Xeon processors (8-10 cores each, 2.2Ghz or more)
+#   MEM:  128-384GB Memory (most have 256GB)
+#   DISK: 1 x 900GB 10K SAS Drive
+#   NIC:  1GbE Quad port embedded NIC (Intel)
+#   NIC:  1 x Solarflare Dual port SFC9120 10G Ethernet NIC
+
+#   - rs630: 28 nodes (Haswell, 20 cores)
+#   CPU:  2 x Xeon E5-2660 v3 processors (10 cores each, 2.6Ghz or more)
+#   MEM:  256GB Memory (16 x 16GB DDR4 DIMMs)
+#   DISK: 1 x 900GB 10K SAS Drive
+#   NIC:  1GbE Quad port embedded NIC (Intel)
+#   NIC:  1 x Solarflare Dual port SFC9120 10G Ethernet NIC
+
+# ------
+# OneLab cluster (as of 04/2022)
+# ------
+#   - m400: 45 nodes (64-bit ARM)
+#   CPU:  Eight 64-bit ARMv8 (Atlas/A57) cores at 2.4 GHz (APM X-GENE)
+#   MEM:  64GB ECC Memory (8x 8 GB DDR3-1600 SO-DIMMs)
+#   DISK: 120 GB of flash (SATA3 / M.2, Micron M500)
+#   NIC:  Dual-port Mellanox ConnectX-3 10 GB NIC (PCIe v3.0, 8 lanes
