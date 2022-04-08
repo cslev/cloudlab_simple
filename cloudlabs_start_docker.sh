@@ -78,6 +78,7 @@ fi
 
 # get into /mnt/extra
 cd /mnt/extra
+sudo mkdir -p /mnt/extra/docker
 
 echo -e "Cloning quic_doh_docker github repo for docker-compose.yml file..." | sudo tee -a /tmp/install.log
 
@@ -91,6 +92,11 @@ echo -e "Adjusting permissions on /mnt/extra..." | sudo tee -a /tmp/install.log
 sudo chown -R $USERNAME /mnt/extra
 sudo chmod -R 777 /mnt/extra
 
+echo -e "Adjusting docker system to use /mnt/extra instead of /var/lib to avoid consuming the root partition" | sudo tee -a /tmp/install.log
+echo 'DOCKER_TMPDIR="/mnt/extra/docker-tmp"' >> /etc/default/docker
+sudo cp /local/repository/source/others/daemon.json /etc/docker/
+
+
 echo -e "Downloading prebuilt image from docker hub..." | sudo tee -a /tmp/install.log
 
 #get doh_docker image
@@ -100,7 +106,7 @@ echo -e "Final minor adjustments..." | sudo tee -a /tmp/install.log
 
 sudo cp /local/repository/source/others/bashrc_template /root/.bashrc
 # sudo source /root/.bashrc
-cp /local/repository/source/others/bashrc_template /users/$USERNAME/.bashrc
+sudo cp /local/repository/source/others/bashrc_template /users/$USERNAME/.bashrc
 sudo echo "${USERNAME}   ALL= NOPASSWD:/usr/sbin/tcpdump" | sudo tee -a /etc/sudoers
 sudo apt-get install -f -y
 sudo apt-get autoremove -y
