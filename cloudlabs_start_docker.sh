@@ -91,11 +91,13 @@ sudo git clone https://github.com/cslev/quic_doh_docker
 echo -e "Adjusting permissions on /mnt/extra..." | sudo tee -a /tmp/install.log
 sudo chown -R $USERNAME /mnt/extra
 sudo chmod -R 777 /mnt/extra
+systemctl restart docker
+
 
 echo -e "Adjusting docker system to use /mnt/extra instead of /var/lib to avoid consuming the root partition" | sudo tee -a /tmp/install.log
 echo 'DOCKER_TMPDIR="/mnt/extra/docker-tmp"' >> /etc/default/docker
 sudo cp /local/repository/source/others/daemon.json /etc/docker/
-
+systemctl daemon-reload
 
 echo -e "Downloading prebuilt image from docker hub..." | sudo tee -a /tmp/install.log
 
