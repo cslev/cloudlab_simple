@@ -62,12 +62,14 @@ echo -e "Installing docker-compose..." | sudo tee -a /tmp/install.log
 
 if [ "$arch" == "arm64" ] 
 then
-  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y docker-compose
-  sudo ln -s /usr/bin/docker-compose  /usr/local/bin/docker-compose
+  # sudo DEBIAN_FRONTEND=noninteractive apt-get install -y docker-compose
+  # sudo ln -s /usr/bin/docker-compose  /usr/local/bin/docker-compose
+  sudo curl -L "https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-linux-aarch64" -o /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
   #there is no extra TB storage for ARMs, but we still work in /mnt/extra
 else
   #installing docker-compose
-  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  sudo curl -L "https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-linux-x86_64" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
 
   echo -e "Requesting extra 1TB storage..." | sudo tee -a /tmp/install.log
@@ -91,13 +93,14 @@ sudo git clone https://github.com/cslev/quic_doh_docker
 echo -e "Adjusting permissions on /mnt/extra..." | sudo tee -a /tmp/install.log
 sudo chown -R $USERNAME /mnt/extra
 sudo chmod -R 777 /mnt/extra
-systemctl restart docker
+
 
 
 echo -e "Adjusting docker system to use /mnt/extra instead of /var/lib to avoid consuming the root partition" | sudo tee -a /tmp/install.log
 echo 'DOCKER_TMPDIR="/mnt/extra/docker-tmp"' >> /etc/default/docker
 sudo cp /local/repository/source/others/daemon.json /etc/docker/
 systemctl daemon-reload
+systemctl restart docker
 
 echo -e "Downloading prebuilt image from docker hub..." | sudo tee -a /tmp/install.log
 
