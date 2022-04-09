@@ -106,6 +106,8 @@ echo -e "Downloading prebuilt image from docker hub..." | sudo tee -a /tmp/insta
 
 #get doh_docker image
 sudo docker pull cslev/quic_doh_docker:latest
+#get the arm64 version too
+sudo docker pull cslev/quic_doh_docker:aarch64
 
 echo -e "Final minor adjustments..." | sudo tee -a /tmp/install.log
 
