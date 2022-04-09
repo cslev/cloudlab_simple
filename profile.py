@@ -27,12 +27,12 @@ request.addTour(tour)
 for i in range(1,7):
   key = str("beast_{}".format(i))
   node = request.RawPC(str(key))
-  # node.hardware_type = "m400" ##ARM
+  node.hardware_type = "m400" ##ARM
   #node.hardware_type = "xl170" ##AMD64 - intel xeon
-  node.hardware_type = "d6515" ##Amd epyc
+  #node.hardware_type = "d6515" ##Amd epyc
   #node.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops:DEB8-64-STD' #<-- does not work
   #node.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD'
-  node.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU20-64-STD'
+  # node.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU20-64-STD'
   node.Site(str(key))
 
   #START the docker-based version
