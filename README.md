@@ -1,5 +1,10 @@
 # Cloudlab Simple profile template
 
+## Versions
+|app|version|
+|docker-compose|2.18.1|
+
+
 [Cloudlab](https://www.cloudlab.us) profile script to run a couple of standalone machines prepared to run docker on top.
 This serves more like a quick profile initializer than an ultimate script for a specific use case.
 
