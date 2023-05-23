@@ -64,12 +64,12 @@ if [ "$arch" == "arm64" ]
 then
   # sudo DEBIAN_FRONTEND=noninteractive apt-get install -y docker-compose
   # sudo ln -s /usr/bin/docker-compose  /usr/local/bin/docker-compose
-  sudo curl -L "https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-linux-aarch64" -o /usr/local/bin/docker-compose
+  sudo curl -L "https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-linux-aarch64" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
   #there is no extra TB storage for ARMs, but we still work in /mnt/extra
 else
   #installing docker-compose
-  sudo curl -L "https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-linux-x86_64" -o /usr/local/bin/docker-compose
+  sudo curl -L "https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-linux-x86_64" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
 
   echo -e "Requesting extra 1TB storage..." | sudo tee -a /tmp/install.log
