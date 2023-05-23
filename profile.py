@@ -29,7 +29,7 @@ for i in range(1,2):
   node = request.RawPC(str(key))
   #node.hardware_type = "m400" ##ARM
   #node.hardware_type = "xl170" ##AMD64 - intel xeon
-  node.hardware_type = "rs440" ##Mass cluster, Xeon Gold 6130 skylake (16 core each CPU)
+  node.hardware_type = "rs630" ##Mass cluster, Xeon Gold 6130 skylake (16 core each CPU)
   #node.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops:DEB8-64-STD' #<-- does not work
   #node.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD'
   # node.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU20-64-STD'
